@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RETHERS MODS — Order</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5E6D3;
+  --bg-elev: #FBF2E5;
+  --bg-panel: #FFFFFF;
+  --bg-hover: #F0E0C8;
+  --border: #E4D2B6;
+  --border-hi: #D9C4A8;
+  --text: #1A1A1A;
+  --text-2: #7A5A44;
+  --text-3: #A08974;
+  --accent: #E8651E;
+  --accent-hover: #F57B2E;
+  --accent-soft: rgba(232,101,30,0.12);
+  --green: #2E7D32;
+  --green-soft: rgba(46,125,50,0.12);
+  --red: #C62828;
+  --red-soft: rgba(198,40,40,0.12);
+  --yellow: #C97A00;
+  --yellow-soft: rgba(201,122,0,0.14);
+  --r: 14px;
+  --r-sm: 10px;
+  --r-xs: 6px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 90px;
+}
+
+::selection { background: var(--accent-soft); color: var(--accent); }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #C9B39A; }
+
+/* ============ HEADER ============ */
+.topbar {
+  background: linear-gradient(135deg, #E8651E 0%, #C94F0F 100%);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(232,101,30,0.30);
+}
+
+.brand-logo {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.20);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 20px; color: #FFF;
+  border: 1.5px solid rgba(255,255,255,0.30);
+  flex-shrink: 0;
+}
+
+.brand-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: #FFF;
+  letter-spacing: -0.02em;
+}
+
+.brand-tag {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.85);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 1px;
+}
+
+.btn-login-top {
+  background: rgba(255,255,255,0.95);
+  color: var(--accent);
+  border: none;
+  padding: 9px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+
+.btn-login-top:hover { background: #FFF; transform: translateY(-1px); }
+.btn-login-top svg { width: 15px; height: 15px; }
+
+/* ============ HERO BANNER ============ */
+.hero {
+  padding: 20px 18px 8px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.hero p {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+/* ============ SECTIONS ============ */
+.container {
+  padding: 14px 18px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.section {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 10px rgba(122,90,68,0.06);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.step-num {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(232,101,30,0.30);
+}
+
+.section-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  flex: 1;
+}
+
+.section-head .arrow {
+  color: var(--text-3);
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.section.collapsible .section-head { cursor: pointer; }
+.section.collapsible.open .arrow { transform: rotate(90deg); }
+.section.collapsible .section-body { display: none; }
+.section.collapsible.open .section-body { display: block; }
+
+/* ============ FIELD ============ */
+.field { margin-bottom: 14px; }
+.field:last-child { margin-bottom: 0; }
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-2);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: var(--r-sm);
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.15s;
+  outline: none;
+}
+
+.field input::placeholder, .field textarea::placeholder { color: var(--text-3); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--accent);
+  background: #FFF;
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* ============ PAKET GRID ============ */
+.paket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 400px) { .paket-grid { grid-template-columns: 1fr; } }
+
+.paket {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.paket:hover {
+  border-color: var(--accent);
+  background: #FFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232,101,30,0.15);
+}
+
+.paket.selected {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-soft), rgba(232,101,30,0.05));
+  box-shadow: 0 6px 20px rgba(232,101,30,0.20);
+}
+
+.paket.selected::after {
+  content: "✓";
+  position: absolute;
+  top: 8px; right: 10px;
+  width: 22px; height: 22px;
+  background: var(--accent);
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.paket-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.paket-price {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.paket-stock {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--green-soft);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.paket-stock::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+}
+
+.paket-stock.low {
+  color: var(--yellow);
+  background: var(--yellow-soft);
+}
+.paket-stock.low::before { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
+
+.paket-stock.empty {
+  color: var(--red);
+  background: var(--red-soft);
+}
+.paket-stock.empty::before { background: var(--red); box-shadow: none; }
+
+/* ============ FEATURES LIST ============ */
+.features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 480px) { .features-list { grid-template-columns: 1fr; } }
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  transition: all 0.15s;
+}
+
+.feature:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.feature-icon {
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 800;
+}
+
+.feature-icon svg { width: 14px; height: 14px; }
+
+.feature-text {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.feature-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #FFF;
+  margin-left: auto;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.feature-tag.root {
+  background: #7B1FA2;
+}
+
+/* ============ PROMO ============ */
+.promo-row {
+  display: flex;
+  gap: 8px;
+}
+
+.promo-row input {
+  flex: 1;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.promo-row button {
+  background: var(--accent);
+  color: #FFF;
+  border: none;
+  padding: 0 18px;
+  border-radius: var(--r-sm);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.promo-row button:hover { background: var(--accent-hover); }
+.promo-row button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.promo-success {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--green-soft);
+  border: 1px solid rgba(46,125,50,0.25);
+  border-radius: var(--r-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.promo-success.show { display: flex; }
+
+.promo-error {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--red-soft);
+  border: 1px solid rgba(198,40,40,0.25);
+  border-radius: var(--r-sm);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.promo-error.show { display: flex; }
+
+/* ============ PAYMENT METHODS ============ */
+.pay-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pay-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pay-item:hover {
+  border-color: var(--accent);
+  background: #FFF;
+}
+
+.pay-item.selected {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-soft), rgba(232,101,30,0.05));
+}
+
+.pay-radio {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-hi);
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.15s;
+}
+
+.pay-item.selected .pay-radio {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.pay-item.selected .pay-radio::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #FFF;
+}
+
+.pay-info { flex: 1; min-width: 0; }
+.pay-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.pay-desc { font-size: 11.5px; color: var(--text-2); margin-top: 1px; }
+
+.pay-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #FFF;
+  flex-shrink: 0;
+}
+
+/* ============ SUMMARY ============ */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 13.5px;
+  color: var(--text-2);
+  border-bottom: 1px dashed var(--border);
+}
+
+.summary-row:last-child { border-bottom: none; }
+.summary-row .v { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  margin-top: 6px;
+  border-top: 2px solid var(--border);
+}
+
+.summary-total .k {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.summary-total .v {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.discount-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-soft);
+  padding: 2px 7px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+/* ============ CTA ============ */
+.cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  padding: 12px 18px calc(12px + env(safe-area-inset-bottom));
+  z-index: 40;
+  box-shadow: 0 -8px 24px rgba(122,90,68,0.12);
+}
+
+.cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-price {
+  flex: 1;
+  min-width: 0;
+}
+
+.cta-price .label {
+  font-size: 11px;
+  color: var(--text-2);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cta-price .value {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn-order {
+  background: var(--accent);
+  color: #FFF;
+  border: none;
+  padding: 14px 22px;
+  border-radius: var(--r-sm);
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s;
+  box-shadow: 0 6px 20px rgba(232,101,30,0.35);
+  white-space: nowrap;
+}
+
+.btn-order:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-order:active { transform: scale(0.98); }
+.btn-order:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+.btn-order svg { width: 16px; height: 16px; }
+
+/* ============ TOAST ============ */
+.toast-stack {
+  position: fixed;
+  bottom: 100px;
+  right: 18px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hi);
+  color: var(--text);
+  padding: 13px 16px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 240px;
+  max-width: 340px;
+  box-shadow: 0 16px 40px rgba(43,24,16,0.25);
+  animation: slide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 4px solid var(--accent);
+}
+
+.toast.success { border-left-color: var(--green); }
+.toast.error { border-left-color: var(--red); }
+.toast.warn { border-left-color: var(--yellow); }
+
+@keyframes slide {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ============ MODAL ============ */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(43,24,16,0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadein 0.15s ease;
+}
+
+.modal-backdrop.open { display: flex; }
+
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 24px 80px rgba(43,24,16,0.35);
+  animation: pop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-body {
+  padding: 28px 24px 20px;
+  text-align: center;
+}
+
+.modal-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: var(--green-soft);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 32px;
+}
+
+.modal h3 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.modal p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.modal-summary {
+  background: var(--bg);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  margin-top: 18px;
+  text-align: left;
+}
+
+.modal-foot {
+  padding: 16px 24px 24px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-modal {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--r-sm);
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-modal.primary { background: var(--accent); color: #FFF; }
+.btn-modal.primary:hover { background: var(--accent-hover); }
+.btn-modal.ghost { background: var(--bg); color: var(--text); border: 1.5px solid var(--border); }
+.btn-modal.ghost:hover { background: var(--bg-hover); }
+
+/* ============ INFO ROW ============ */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13px;
+  gap: 12px;
+}
+
+.info-row .k { color: var(--text-2); }
+.info-row .v { font-weight: 700; color: var(--text); text-align: right; word-break: break-word; }
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="brand-logo">R</div>
+  <div class="brand-info">
+    <div class="brand-name">RETHERS MODS</div>
+    <div class="brand-tag">Mobile Legends · Premium</div>
+  </div>
+  <button class="btn-login-top" onclick="goToReseller()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+    Reseller
+  </button>
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <h2>Order RETHERS MODS</h2>
+  <p>Pilih paket, bayar, langsung aktif 🦊</p>
+</div>
+
+<div class="container">
+
+  <!-- ============ 1. DATA PEMBELI ============ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="step-num">1</div>
+      <div class="section-title">Data Pembeli</div>
+    </div>
+
+    <div class="field">
+      <label>Nama Lengkap / Username</label>
+      <input type="text" id="buyerName" placeholder="Masukkan nama kamu">
+    </div>
+
+    <div class="field">
+      <label>Nomor WhatsApp Aktif</label>
+      <input type="tel" id="buyerPhone" placeholder="08xxxxxxxxxx" inputmode="numeric">
+    </div>
+
+    <div class="field">
+      <label>Device / HP yang Dipakai</label>
+      <input type="text" id="buyerDevice" placeholder="Contoh: Redmi Note 13, Samsung A54">
+    </div>
+  </div>
+
+  <!-- ============ 2. PILIH PAKET ============ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="step-num">2</div>
+      <div class="section-title">Pilih Paket</div>
+    </div>
+
+    <div class="paket-grid" id="paketGrid">
+      <!-- Paket akan di-render via JS -->
+    </div>
+  </div>
+
+  <!-- ============ FITUR ============ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="step-num">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="section-title">Fitur Premium</div>
+    </div>
+
+    <div class="features-list" id="featuresList">
+      <!-- Fitur akan di-render via JS -->
+    </div>
+  </div>
+
+  <!-- ============ 3. KODE PROMO ============ -->
+  <div class="section collapsible" id="promoSection">
+    <div class="section-head" onclick="toggleSection('promoSection')">
+      <div class="step-num">3</div>
+      <div class="section-title">Punya Kode Promo?</div>
+      <div class="arrow">›</div>
+    </div>
+
+    <div class="section-body">
+      <div class="promo-row">
+        <input type="text" id="promoCode" placeholder="KODE PROMO" maxlength="20">
+        <button id="applyPromoBtn" onclick="applyPromo()">Pakai</button>
+      </div>
+
+      <div class="promo-success" id="promoSuccess">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+        <span id="promoSuccessText">Kode promo berhasil!</span>
+      </div>
+
+      <div class="promo-error" id="promoError">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span id="promoErrorText">Kode promo tidak valid</span>
+      </div>
+
+      <div style="font-size:11.5px;color:var(--text-3);margin-top:10px;text-align:center">
+        Coba: <code style="background:var(--bg);padding:2px 7px;border-radius:6px;font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:700">RETHERS10</code> untuk diskon 10%
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 4. METODE PEMBAYARAN ============ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="step-num">4</div>
+      <div class="section-title">Metode Pembayaran</div>
+    </div>
+
+    <div class="pay-list" id="payList">
+      <!-- Payment methods dirender via JS -->
+    </div>
+  </div>
+
+  <!-- ============ 5. DETAIL KONTAK ============ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="step-num">5</div>
+      <div class="section-title">Detail Kontak</div>
+    </div>
+
+    <div class="field">
+      <label>Catatan Tambahan (Opsional)</label>
+      <textarea id="buyerNotes" placeholder="Contoh: tolong aktivasi hari ini ya min"></textarea>
+    </div>
+  </div>
+
+  <!-- ============ RINGKASAN ============ -->
+  <div class="section">
+    <div class="section-head">
+      <div class="step-num">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <div class="section-title">Ringkasan Order</div>
+    </div>
+
+    <div class="summary-row">
+      <span>Paket</span>
+      <span class="v" id="sumPaket">—</span>
+    </div>
+    <div class="summary-row">
+      <span>Harga</span>
+      <span class="v" id="sumHarga">Rp 0</span>
+    </div>
+    <div class="summary-row" id="sumDiskonRow" style="display:none">
+      <span>Diskon <span class="discount-tag" id="sumDiskonTag">-0%</span></span>
+      <span class="v" id="sumDiskon" style="color:var(--green)">-Rp 0</span>
+    </div>
+    <div class="summary-row">
+      <span>Metode</span>
+      <span class="v" id="sumMetode">—</span>
+    </div>
+
+    <div class="summary-total">
+      <span class="k">Total Bayar</span>
+      <span class="v" id="sumTotal">Rp 0</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ CTA BAR ============ -->
+<div class="cta-bar">
+  <div class="cta-inner">
+    <div class="cta-price">
+      <div class="label">Total Bayar</div>
+      <div class="value" id="ctaTotal">Rp 0</div>
+    </div>
+    <button class="btn-order" id="orderBtn" onclick="submitOrder()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Order Sekarang
+    </button>
+  </div>
+</div>
+
+<!-- ============ MODAL SUKSES ============ -->
+<div class="modal-backdrop" id="successModal">
+  <div class="modal">
+    <div class="modal-body">
+      <div class="modal-icon">✓</div>
+      <h3>Order Berhasil!</h3>
+      <p>Pesanan kamu sudah masuk ke sistem. Silakan lanjutkan pembayaran sesuai instruksi.</p>
+
+      <div class="modal-summary">
+        <div class="info-row"><span class="k">Paket</span><span class="v" id="mPaket">—</span></div>
+        <div class="info-row"><span class="k">Metode</span><span class="v" id="mMetode">—</span></div>
+        <div class="info-row"><span class="k">Total</span><span class="v" id="mTotal" style="color:var(--accent)">—</span></div>
+      </div>
+    </div>
+
+    <div class="modal-foot">
+      <button class="btn-modal ghost" onclick="closeModal('successModal')">Tutup</button>
+      <button class="btn-modal primary" onclick="continueToWA()">Chat Admin</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toasts"></div>
+
+<script>
+// =====================================================
+// CONFIG
+// =====================================================
+const ADMIN_WA = "6281234567890"; // Ganti dengan nomor WA admin
+const FIREBASE_BASE = "https://gh7x8j971-default-rtdb.firebaseio.com"; // Optional
+
+// =====================================================
+// DATA PAKET
+// =====================================================
+const PAKETS = [
+  { id: "p3",  name: "Paket 3 Hari",  price: 30000,  stock: 4 },
+  { id: "p7",  name: "Paket 7 Hari",  price: 60000,  stock: 9 },
+  { id: "p30", name: "Paket 30 Hari", price: 100000, stock: 6 },
+  { id: "p60", name: "Paket 60 Hari", price: 180000, stock: 10 },
+  { id: "p90", name: "Paket 90 Hari", price: 260000, stock: 7 }
+];
+
+// =====================================================
+// FITUR
+// =====================================================
+const FEATURES = [
+  { name: "ESP Player",           icon: "user",   tag: null },
+  { name: "ESP Monster",          icon: "skull",  tag: null },
+  { name: "Room Info",            icon: "info",   tag: null },
+  { name: "Show Cooldown",        icon: "clock",  tag: null },
+  { name: "Alert Lord Attack",    icon: "alert",  tag: null },
+  { name: "Draw Map Hack",        icon: "map",    tag: null },
+  { name: "Auto Retri On Point",  icon: "zap",    tag: "ROOT" }
+];
+
+const FEATURE_ICONS = {
+  user:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>',
+  skull: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M8 20v2h8v-2"/><path d="M12.5 17h-1a2 2 0 0 1-2-2v-1a5 5 0 0 1-5-5v-1a6 6 0 0 1 12 0v1a5 5 0 0 1-4 4.9"/></svg>',
+  info:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+  alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  map:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>',
+  zap:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
+};
+
+// =====================================================
+// METODE BAYAR
+// =====================================================
+const PAYMENTS = [
+  { id: "qris",  name: "QRIS",         desc: "Semua bank & e-wallet",        badge: "INSTAN" },
+  { id: "dana",  name: "DANA",         desc: "E-wallet DANA",                badge: null },
+  { id: "ovo",   name: "OVO",          desc: "E-wallet OVO",                 badge: null },
+  { id: "gopay", name: "GoPay",        desc: "E-wallet GoPay",               badge: null },
+  { id: "bca",   name: "Transfer BCA", desc: "Bank Central Asia",            badge: null },
+  { id: "mandiri", name: "Transfer Mandiri", desc: "Bank Mandiri",          badge: null }
+];
+
+// =====================================================
+// PROMO
+// =====================================================
+const PROMOS = {
+  "RETHERS10":  { type: "percent", value: 10, label: "Diskon 10%" },
+  "RETHERS20":  { type: "percent", value: 20, label: "Diskon 20%" },
+  "NEWUSER":    { type: "fixed",   value: 5000, label: "Potongan Rp 5.000" }
+};
+
+// =====================================================
+// STATE
+// =====================================================
+let selectedPaket = null;
+let selectedPayment = null;
+let appliedPromo = null;
+
+// =====================================================
+// UTIL
+// =====================================================
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+
+function toast(msg, type = "success", duration = 3000) {
+  const el = document.createElement("div");
+  el.className = "toast " + type;
+  el.textContent = msg;
+  $("#toasts").appendChild(el);
+  setTimeout(() => {
+    el.style.opacity = "0";
+    el.style.transition = "opacity 0.3s";
+    setTimeout(() => el.remove(), 300);
+  }, duration);
+}
+
+function formatRupiah(n) {
+  return "Rp " + (Number(n) || 0).toLocaleString("id-ID");
+}
+
+function toggleSection(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle("open");
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove("open");
+}
+
+function goToReseller() {
+  window.location.href = "reseller.html";
+}
+
+// =====================================================
+// RENDER PAKET
+// =====================================================
+function renderPakets() {
+  const grid = $("#paketGrid");
+  grid.innerHTML = PAKETS.map(p => {
+    let stockClass = "";
+    let stockText = `Stok ${p.stock}`;
+    if (p.stock === 0) { stockClass = "empty"; stockText = "Habis"; }
+    else if (p.stock <= 3) { stockClass = "low"; stockText = `Stok ${p.stock} (terbatas)`; }
+
+    return `
+      <div class="paket" data-id="${p.id}" onclick="selectPaket('${p.id}')">
+        <div class="paket-name">${p.name}</div>
+        <div class="paket-price">${formatRupiah(p.price)}</div>
+        <div class="paket-stock ${stockClass}">${stockText}</div>
+      </div>
+    `;
+  }).join("");
+}
+
+function selectPaket(id) {
+  const paket = PAKETS.find(p => p.id === id);
+  if (!paket) return;
+  if (paket.stock === 0) {
+    toast("Stok paket ini habis", "error");
+    return;
+  }
+
+  selectedPaket = paket;
+
+  $$(".paket").forEach(el => {
+    el.classList.toggle("selected", el.dataset.id === id);
+  });
+
+  updateSummary();
+}
+
+// =====================================================
+// RENDER FITUR
+// =====================================================
+function renderFeatures() {
+  const list = $("#featuresList");
+  list.innerHTML = FEATURES.map(f => `
+    <div class="feature">
+      <div class="feature-icon">${FEATURE_ICONS[f.icon] || ""}</div>
+      <div class="feature-text">${f.name}</div>
+      ${f.tag ? `<span class="feature-tag ${f.tag.toLowerCase()}">${f.tag}</span>` : ""}
+    </div>
+  `).join("");
+}
+
+// =====================================================
+// RENDER PAYMENTS
+// =====================================================
+function renderPayments() {
+  const list = $("#payList");
+  list.innerHTML = PAYMENTS.map(p => `
+    <div class="pay-item" data-id="${p.id}" onclick="selectPayment('${p.id}')">
+      <div class="pay-radio"></div>
+      <div class="pay-info">
+        <div class="pay-name">${p.name}</div>
+        <div class="pay-desc">${p.desc}</div>
+      </div>
+      ${p.badge ? `<span class="pay-badge">${p.badge}</span>` : ""}
+    </div>
+  `).join("");
+}
+
+function selectPayment(id) {
+  const pay = PAYMENTS.find(p => p.id === id);
+  if (!pay) return;
+
+  selectedPayment = pay;
+
+  $$(".pay-item").forEach(el => {
+    el.classList.toggle("selected", el.dataset.id === id);
+  });
+
+  updateSummary();
+}
+
+// =====================================================
+// PROMO
+// =====================================================
+function applyPromo() {
+  const code = $("#promoCode").value.trim().toUpperCase();
+
+  if (!code) {
+    toast("Masukkan kode promo dulu", "warn");
+    return;
+  }
+
+  const promo = PROMOS[code];
+
+  if (!promo) {
+    $("#promoSuccess").classList.remove("show");
+    $("#promoErrorText").textContent = `Kode "${code}" tidak valid`;
+    $("#promoError").classList.add("show");
+    appliedPromo = null;
+    updateSummary();
+    return;
+  }
+
+  appliedPromo = { code, ...promo };
+
+  $("#promoError").classList.remove("show");
+  $("#promoSuccessText").textContent = `${promo.label} berhasil dipakai!`;
+  $("#promoSuccess").classList.add("show");
+
+  toast("Kode promo berhasil!", "success");
+  updateSummary();
+}
+
+// =====================================================
+// SUMMARY
+// =====================================================
+function calculateTotal() {
+  const harga = selectedPaket ? selectedPaket.price : 0;
+  let diskon = 0;
+
+  if (appliedPromo && harga > 0) {
+    if (appliedPromo.type === "percent") {
+      diskon = Math.round(harga * appliedPromo.value / 100);
+    } else if (appliedPromo.type === "fixed") {
+      diskon = Math.min(appliedPromo.value, harga);
+    }
+  }
+
+  const total = Math.max(0, harga - diskon);
+  return { harga, diskon, total };
+}
+
+function updateSummary() {
+  const { harga, diskon, total } = calculateTotal();
+
+  $("#sumPaket").textContent = selectedPaket ? selectedPaket.name : "—";
+  $("#sumHarga").textContent = formatRupiah(harga);
+  $("#sumMetode").textContent = selectedPayment ? selectedPayment.name : "—";
+
+  if (diskon > 0) {
+    $("#sumDiskonRow").style.display = "flex";
+    $("#sumDiskon").textContent = "-" + formatRupiah(diskon);
+    const pct = Math.round(diskon / harga * 100);
+    $("#sumDiskonTag").textContent = `-${pct}%`;
+  } else {
+    $("#sumDiskonRow").style.display = "none";
+  }
+
+  $("#sumTotal").textContent = formatRupiah(total);
+  $("#ctaTotal").textContent = formatRupiah(total);
+}
+
+// =====================================================
+// SUBMIT ORDER
+// =====================================================
+function submitOrder() {
+  const name = $("#buyerName").value.trim();
+  const phone = $("#buyerPhone").value.trim();
+  const device = $("#buyerDevice").value.trim();
+  const notes = $("#buyerNotes").value.trim();
+
+  // Validasi
+  if (!name) { toast("Nama wajib diisi", "error"); $("#buyerName").focus(); return; }
+  if (!phone) { toast("Nomor WhatsApp wajib diisi", "error"); $("#buyerPhone").focus(); return; }
+  if (!/^[0-9+\-\s]{8,}$/.test(phone)) { toast("Nomor WhatsApp tidak valid", "error"); $("#buyerPhone").focus(); return; }
+  if (!device) { toast("Device/HP wajib diisi", "error"); $("#buyerDevice").focus(); return; }
+  if (!selectedPaket) { toast("Pilih paket dulu", "error"); return; }
+  if (!selectedPayment) { toast("Pilih metode pembayaran", "error"); return; }
+
+  const { total } = calculateTotal();
+
+  // Kirim ke Firebase (opsional)
+  sendOrderToFirebase({ name, phone, device, notes, total });
+
+  // Tampilkan modal sukses
+  $("#mPaket").textContent = selectedPaket.name;
+  $("#mMetode").textContent = selectedPayment.name;
+  $("#mTotal").textContent = formatRupiah(total);
+  $("#successModal").classList.add("open");
+
+  // Simpan untuk WA
+  window.__lastOrder = { name, phone, device, notes, total };
+}
+
+async function sendOrderToFirebase(data) {
+  try {
+    const orderId = "ORD" + Date.now();
+    const payload = {
+      OrderID: orderId,
+      Name: data.name,
+      Phone: data.phone,
+      Device: data.device,
+      Notes: data.notes,
+      Paket: selectedPaket.name,
+      PaketPrice: selectedPaket.price,
+      Promo: appliedPromo ? appliedPromo.code : null,
+      Diskon: calculateTotal().diskon,
+      Total: data.total,
+      Payment: selectedPayment.name,
+      Status: "pending",
+      CreatedAt: new Date().toISOString()
+    };
+
+    await fetch(`${FIREBASE_BASE}/DPMods_Security/Orders/${orderId}.json`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    console.log("Order saved:", orderId);
+  } catch (e) {
+    console.error("Gagal simpan order:", e);
+  }
+}
+
+function continueToWA() {
+  const o = window.__lastOrder;
+  if (!o) return;
+
+  const msg = [
+    `Halo Admin RETHERS MODS 🦊`,
+    ``,
+    `Saya mau order:`,
+    `• Paket: ${selectedPaket.name}`,
+    `• Harga: ${formatRupiah(selectedPaket.price)}`,
+    appliedPromo ? `• Promo: ${appliedPromo.code} (${appliedPromo.label})` : null,
+    `• Total: ${formatRupiah(o.total)}`,
+    ``,
+    `Data Pembeli:`,
+    `• Nama: ${o.name}`,
+    `• WA: ${o.phone}`,
+    `• Device: ${o.device}`,
+    o.notes ? `• Catatan: ${o.notes}` : null,
+    ``,
+    `Metode: ${selectedPayment.name}`
+  ].filter(Boolean).join("\n");
+
+  const url = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(msg)}`;
+  window.open(url, "_blank");
+}
+
+// =====================================================
+// INIT
+// =====================================================
+renderPakets();
+renderFeatures();
+renderPayments();
+updateSummary();
+
+// Auto-focus nama
+setTimeout(() => $("#buyerName").focus(), 100);
+</script>
+</body>
+</html>
